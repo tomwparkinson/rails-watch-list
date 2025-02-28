@@ -13,3 +13,8 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.banner-img {
+  height: 300px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}

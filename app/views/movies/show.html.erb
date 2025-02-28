@@ -1,0 +1,17 @@
+<h2><%= @movie.title %></h2>
+<div class="banner-img p-0">
+  <%= image_tag @movie.poster_url, alt: @movie.title, class: "w-100 img-fluid banner-img" %>
+</div>
+
+<div>
+  <p><%= @movie.overview %></p>
+  <h3><%= "List(s) included in" %></h3>
+  <div class="row my-2">
+    <% @movie.lists.each do |list| %>
+      <% bookmark = Bookmark.find_by(movie: @movie, list: list) %>
+      <div class="col-12 col-sm-6 mb-2">
+        <%= link_to list.name, list_path(list), class: "btn btn-outline-primary w-100" %>
+      </div>
+    <% end %>
+  </div>
+</div>
