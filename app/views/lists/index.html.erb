@@ -1,0 +1,20 @@
+<div class="navbar">
+  <h1>My Lists</h1>
+  <%= link_to "Create a list", new_list_path, class: "btn btn-primary"%>
+</div>
+
+
+  <div class="container">
+    <div class="row">
+      <% @lists.each do |list| %>
+        <div class="col-md-4 mb-4"> <!-- 3 cards per row -->
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Placeholder Image">
+            <div class="card-category">
+              <%= link_to list.name, list_path(list), class: "btn btn-secondary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
